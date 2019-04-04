@@ -60,7 +60,72 @@ class ProjectManagers extends Instructors {
     console.log(`${this.name} announces to ${channel}, @channel standy times!`);
   }
 
-  debugCode(studentObj, subject) {
-    console.log(`${this.name} debugs ${student.name}'s code on ${subject}`);
+  debugCode(student, subject) {
+    console.log(`${this.name} debugs ${student.name}'s code on ${subject}.`);
   }
 }
+
+/*********************** Classes above and objects below *******************************************/
+//Instructor Objects
+const Josh = new Instructors({
+  name: 'Josh',
+  location: 'Kentucky',
+  age: 32,
+  gender: 'male',
+  specialty: 'Front-end',
+  favLanguage: 'JavaScript',
+  catchPhrase: `Don't forget the homies`
+});
+
+const Neil = new Instructors({
+  name: 'Neil',
+  location: 'Connecticut',
+  age: 29,
+  gender: 'male',
+  specialty: 'Back-end',
+  favLanguage: 'Python',
+  catchPhrase: `Nut up or shut up`
+});
+
+// Student Objects
+const David = new Students({
+  name: 'David',
+  location: 'New Jersey',
+  age: 28,
+  gender: 'male',
+  previousBackground: "IT-Tech",
+  className: "WEB19",
+  favSubject: ["JavaScript", "Material.io"]
+});
+
+const Tashi = new Students({
+  name: 'Tashi',
+  location: 'Indiana',
+  age: 30,
+  gender: 'male',
+  previousBackground: "Master Chef",
+  className: "WEB17",
+  favSubject: ["Python", "Django"]
+});
+
+//Project Manager Objects
+const Brad = new ProjectManagers({
+  name: 'Brad',
+  location: 'Siberia',
+  age: 23,
+  gender: 'male',
+  gradClassName: "Web12",
+  favInstructor: "Josh"
+});
+
+const Gustav = new ProjectManagers({
+  name: 'Gustav',
+  location: 'California',
+  age: 35,
+  gender: 'male',
+  gradClassName: "Web12",
+  favInstructor: "Josh"
+});
+
+Gustav.standUp("Web19_Gustav");
+Brad.debugCode(David, "math");

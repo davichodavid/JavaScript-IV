@@ -20,7 +20,7 @@ class Instructors extends Person {
     this.catchPhrase = insAttrs.catchPhrase;
   }
   demo(subject) {
-    console.log(`Today we are learning about ${subject}`);
+    console.log(`Today we are learning about ${subject}.`);
   }
 
   grade(student, subject) {
@@ -37,15 +37,15 @@ class Students extends Person {
   }
 
   listSubjects() {
-    console.log(this.favSubject);
+    console.log(...this.favSubject);
   }
 
   PRAssignment(subject) {
-    console.log(`${student.name} has submitted a PR for ${subject}.`);
+    console.log(`${this.name} has submitted a PR for ${subject}.`);
   }
 
   sprintChallenge(subject) {
-    console.log(`${student.name} has begun sprint challenge on ${subject}`);
+    console.log(`${this.name} has begun sprint challenge on ${subject}`);
   }
 }
 
@@ -126,6 +126,20 @@ const Gustav = new ProjectManagers({
   gradClassName: "Web12",
   favInstructor: "Josh"
 });
+/*********************** Method Tests *******************************************/
 
+//Person Test
+David.speak();
+
+//Project Manager Tests
 Gustav.standUp("Web19_Gustav");
 Brad.debugCode(David, "math");
+
+//Instructor Test
+Brad.demo("JavaScript");
+Gustav.grade(Tashi, "Python");
+
+//Student Test
+David.listSubjects();
+Tashi.PRAssignment("Python");
+David.sprintChallenge("JS IV");
